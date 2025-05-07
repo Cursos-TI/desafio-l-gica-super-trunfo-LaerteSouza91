@@ -1,43 +1,70 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+struct CartaPais {
+    char nome[50];
+    int populacao;    // em milhões
+    float pib;        // em trilhões de dólares
+    float area;       // em milhões de km²
+};
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    struct CartaPais pais1, pais2;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // Leitura dos dados do primeiro país
+    printf("Digite o nome do primeiro país (sem espaços): ");
+    scanf("%s", pais1.nome);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("População (em milhões): ");
+    scanf("%d", &pais1.populacao);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    printf("PIB (em trilhões de dólares): ");
+    scanf("%f", &pais1.pib);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("Área (em milhões de km²): ");
+    scanf("%f", &pais1.area);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    // Leitura dos dados do segundo país
+    printf("\nDigite o nome do segundo país (sem espaços): ");
+    scanf("%s", pais2.nome);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    printf("População (em milhões): ");
+    scanf("%d", &pais2.populacao);
+
+    printf("PIB (em trilhões de dólares): ");
+    scanf("%f", &pais2.pib);
+
+    printf("Área (em milhões de km²): ");
+    scanf("%f", &pais2.area);
+
+    // Comparações
+    printf("\n--- Comparação das cartas ---\n");
+
+    // População
+    printf("População: ");
+    if (pais1.populacao > pais2.populacao)
+        printf("%s vence\n", pais1.nome);
+    else if (pais2.populacao > pais1.populacao)
+        printf("%s vence\n", pais2.nome);
+    else
+        printf("Empate\n");
+
+    // PIB
+    printf("PIB: ");
+    if (pais1.pib > pais2.pib)
+        printf("%s vence\n", pais1.nome);
+    else if (pais2.pib > pais1.pib)
+        printf("%s vence\n", pais2.nome);
+    else
+        printf("Empate\n");
+
+    // Área
+    printf("Área: ");
+    if (pais1.area > pais2.area)
+        printf("%s vence\n", pais1.nome);
+    else if (pais2.area > pais1.area)
+        printf("%s vence\n", pais2.nome);
+    else
+        printf("Empate\n");
 
     return 0;
 }
